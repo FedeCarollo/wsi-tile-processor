@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "wsi-tile-processor"
+version = "0.1.0"
+description = "Tile-by-tile inference on Whole Slide Images (WSI) with pyramidal OME-TIFF output"
+readme = "README.md"
+license = { text = "MIT" }
+authors = [
+    { name = "Federico Carollo" },
+]
+urls = { Repository = "https://github.com/FedeCarollo/wsi-tile-processor" }
+requires-python = ">=3.10"
+keywords = ["WSI", "whole slide image", "pathology", "OME-TIFF", "tiling", "inference", "histology"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Medical Science Apps.",
+    "Topic :: Scientific/Engineering :: Image Processing",
+]
+dependencies = [
+    "numpy",
+    "tifffile",
+    "imagecodecs",
+    "openslide-python",
+    "scipy",
+    "Pillow",
+    "pyvips",
+]
+
+[project.optional-dependencies]
+full = ["zarr", "scikit-image"]
+
+[project.urls]
+Homepage = "https://github.com/YOUR_USERNAME/wsi-tile-processor"
+Repository = "https://github.com/YOUR_USERNAME/wsi-tile-processor"
+Issues = "https://github.com/YOUR_USERNAME/wsi-tile-processor/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
