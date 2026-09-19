@@ -1,0 +1,37 @@
+name: Publish to PyPI
+
+# Questo workflow parte automaticamente ogni volta che crei
+# una nuova "Release" su GitHub (es. v0.1.0)
+on:
+  release:
+    types: [published]
+
+jobs:
+  pypi-publish:
+    name: Build and publish Python package
+    runs-on: ubuntu-latest
+    
+    # PERMESSI RICHIESTI PER IL TRUSTED PUBLISHING
+    permissions:
+      id-token: write
+      contents: read
+
+    steps:
+      - name: Checkout del codice
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Installa i tool di build
+        run: python -m pip install --upgrade pip build
+
+      - name: Build sdist e wheel
+        run: python -m build
+
+      - name: Pubblica su PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
+        # Non serve nessuna password qui! 
+        # Funziona in automatico se hai configurato il Trusted Publisher su PyPI.
