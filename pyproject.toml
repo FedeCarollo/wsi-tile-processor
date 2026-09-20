@@ -42,6 +42,5 @@ Homepage = "https://github.com/FedeCarollo/wsi-tile-processor"
 Repository = "https://github.com/FedeCarollo/wsi-tile-processor"
 Issues = "https://github.com/FedeCarollo/wsi-tile-processor/issues"
 
-[tool.setuptools]
-package-dir = {"" = "src"}
-py-modules = ["wsi_tile_processor"]
+[tool.setuptools.packages.find]
+where = ["src"]
