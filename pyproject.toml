@@ -11,7 +11,6 @@ license = { text = "MIT" }
 authors = [
     { name = "Federico Carollo" },
 ]
-urls = { Repository = "https://github.com/FedeCarollo/wsi-tile-processor" }
 requires-python = ">=3.10"
 keywords = ["WSI", "whole slide image", "pathology", "OME-TIFF", "tiling", "inference", "histology"]
 classifiers = [
@@ -39,9 +38,9 @@ dependencies = [
 full = ["zarr", "scikit-image"]
 
 [project.urls]
-Homepage = "https://github.com/YOUR_USERNAME/wsi-tile-processor"
-Repository = "https://github.com/YOUR_USERNAME/wsi-tile-processor"
-Issues = "https://github.com/YOUR_USERNAME/wsi-tile-processor/issues"
+Homepage = "https://github.com/FedeCarollo/wsi-tile-processor"
+Repository = "https://github.com/FedeCarollo/wsi-tile-processor"
+Issues = "https://github.com/FedeCarollo/wsi-tile-processor/issues"
 
 [tool.setuptools.packages.find]
 where = ["src"]
