@@ -78,7 +78,7 @@ __all__ = [
 
 
 from .filters import (BackgroundFilter, BrightnessBackgroundFilter,
-                      TissueMaskDetector)
+                      TissueMaskDetector, BrightnessTissueMaskDetector)
 from .utils import pyramidize_with_pyvips
 
 
