@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "wsi-tile-processor"
-version = "0.1.1"
+version = "0.1.2"
 description = "Tile-by-tile inference on Whole Slide Images (WSI) with pyramidal OME-TIFF output"
 readme = "README.md"
 license = { text = "MIT" }
@@ -42,5 +42,6 @@ Homepage = "https://github.com/FedeCarollo/wsi-tile-processor"
 Repository = "https://github.com/FedeCarollo/wsi-tile-processor"
 Issues = "https://github.com/FedeCarollo/wsi-tile-processor/issues"
 
-[tool.setuptools.packages.find]
-where = ["src"]
+[tool.setuptools]
+package-dir = {"" = "src"}
+py-modules = ["wsi_tile_processor"]
