@@ -38,14 +38,11 @@ Coarse-level background skipping is handled by :class:`TissueMaskDetector`
 subclasses. Built-in:
 * :class:`BrightnessTissueMaskDetector` — low-res thumbnail thresholding
   + morphological cleanup.
-
-A convenience factory :func:`process_wsi_to_ome_tiff` is provided for
-backward compatibility.
+  
 """
 
 from __future__ import annotations
 
-__version__ = "0.1.0"
 
 import shutil
 import tempfile
@@ -54,29 +51,6 @@ from typing import Callable
 
 import numpy as np
 import tifffile
-
-__all__ = [
-    # Abstract base classes
-    "BackgroundFilter",
-    "TissueMaskDetector",
-    # Built-in background filters
-    "BrightnessBackgroundFilter",
-    "OtsuBackgroundFilter",
-    "SaturationBackgroundFilter",
-    # Built-in tissue mask detectors
-    "BrightnessTissueMaskDetector",
-    # Processors
-    "WSIProcessor",
-    "FastWSIProcessor",
-    "GaussianWSIProcessor",
-    # Pyramid utility
-    "pyramidize_with_pyvips",
-]
-
-
-# ---------------------------------------------------------------------------
-# Background Filter ABCs and built-in implementations
-# ---------------------------------------------------------------------------
 
 
 from .base import WSIProcessor
@@ -281,11 +255,6 @@ class FastWSIProcessor(WSIProcessor):
 
         finally:
             shutil.rmtree(tmp_dir_path, ignore_errors=True)
-
-
-# ---------------------------------------------------------------------------
-# Concrete processor: Gaussian blending (overlapping tiles)
-# ---------------------------------------------------------------------------
 
 
 class GaussianWSIProcessor(WSIProcessor):

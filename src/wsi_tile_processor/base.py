@@ -45,7 +45,6 @@ backward compatibility.
 
 from __future__ import annotations
 
-__version__ = "0.1.0"
 
 from abc import ABC, abstractmethod
 from pathlib import Path
@@ -53,23 +52,6 @@ from typing import Callable
 
 import numpy as np
 
-__all__ = [
-    # Abstract base classes
-    "BackgroundFilter",
-    "TissueMaskDetector",
-    # Built-in background filters
-    "BrightnessBackgroundFilter",
-    "OtsuBackgroundFilter",
-    "SaturationBackgroundFilter",
-    # Built-in tissue mask detectors
-    "BrightnessTissueMaskDetector",
-    # Processors
-    "WSIProcessor",
-    "FastWSIProcessor",
-    "GaussianWSIProcessor",
-    # Pyramid utility
-    "pyramidize_with_pyvips",
-]
 
 
 # ---------------------------------------------------------------------------
@@ -236,9 +218,3 @@ class WSIProcessor(ABC):
             tile_size=self.tiff_chunk,
             verbose=self.verbose,
         )
-
-
-# ---------------------------------------------------------------------------
-# Concrete processor: fast (non-overlapping)
-# ---------------------------------------------------------------------------
-

@@ -45,35 +45,11 @@ backward compatibility.
 
 from __future__ import annotations
 
-__version__ = "0.1.0"
 
 from pathlib import Path
 
 import numpy as np
 from scipy.ndimage import gaussian_filter
-
-__all__ = [
-    # Abstract base classes
-    "BackgroundFilter",
-    "TissueMaskDetector",
-    # Built-in background filters
-    "BrightnessBackgroundFilter",
-    "OtsuBackgroundFilter",
-    "SaturationBackgroundFilter",
-    # Built-in tissue mask detectors
-    "BrightnessTissueMaskDetector",
-    # Processors
-    "WSIProcessor",
-    "FastWSIProcessor",
-    "GaussianWSIProcessor",
-    # Pyramid utility
-    "pyramidize_with_pyvips",
-]
-
-
-# ---------------------------------------------------------------------------
-# Background Filter ABCs and built-in implementations
-# ---------------------------------------------------------------------------
 
 
 
@@ -162,9 +138,4 @@ def pyramidize_with_pyvips(
         subifd=True,
     )
     tmp_path.replace(tiff_path)
-
-
-# ---------------------------------------------------------------------------
-# Abstract base class
-# ---------------------------------------------------------------------------
 

@@ -45,34 +45,10 @@ backward compatibility.
 
 from __future__ import annotations
 
-__version__ = "0.1.0"
 
 from abc import ABC, abstractmethod
 
 import numpy as np
-
-__all__ = [
-    # Abstract base classes
-    "BackgroundFilter",
-    "TissueMaskDetector",
-    # Built-in background filters
-    "BrightnessBackgroundFilter",
-    "OtsuBackgroundFilter",
-    "SaturationBackgroundFilter",
-    # Built-in tissue mask detectors
-    "BrightnessTissueMaskDetector",
-    # Processors
-    "WSIProcessor",
-    "FastWSIProcessor",
-    "GaussianWSIProcessor",
-    # Pyramid utility
-    "pyramidize_with_pyvips",
-]
-
-
-# ---------------------------------------------------------------------------
-# Background Filter ABCs and built-in implementations
-# ---------------------------------------------------------------------------
 
 
 

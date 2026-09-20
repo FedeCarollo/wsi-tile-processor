@@ -45,7 +45,6 @@ backward compatibility.
 
 from __future__ import annotations
 
-__version__ = "0.1.0"
 
 from pathlib import Path
 
@@ -53,23 +52,6 @@ import numpy as np
 import openslide
 import tifffile
 
-__all__ = [
-    # Abstract base classes
-    "BackgroundFilter",
-    "TissueMaskDetector",
-    # Built-in background filters
-    "BrightnessBackgroundFilter",
-    "OtsuBackgroundFilter",
-    "SaturationBackgroundFilter",
-    # Built-in tissue mask detectors
-    "BrightnessTissueMaskDetector",
-    # Processors
-    "WSIProcessor",
-    "FastWSIProcessor",
-    "GaussianWSIProcessor",
-    # Pyramid utility
-    "pyramidize_with_pyvips",
-]
 
 
 # ---------------------------------------------------------------------------
@@ -250,9 +232,4 @@ def _get_mpp_with_source(
 
 def _get_mpp(slide: openslide.OpenSlide | _TifffileSlide) -> float:
     return _get_mpp_with_source(slide)[0]
-
-
-# ---------------------------------------------------------------------------
-# Internal helpers
-# ---------------------------------------------------------------------------
 
