@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "wsi-tile-processor"
-version = "0.1.2"
+version = "0.2.0"
 description = "Tile-by-tile inference on Whole Slide Images (WSI) with pyramidal OME-TIFF output"
 readme = "README.md"
 license = { text = "MIT" }

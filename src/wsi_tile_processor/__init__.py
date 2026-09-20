@@ -7,7 +7,7 @@ from .filters import (BackgroundFilter, BrightnessBackgroundFilter,
                       SaturationBackgroundFilter, TissueMaskDetector)
 from .processors import FastWSIProcessor, GaussianWSIProcessor
 
-__version__ = "0.1.2"
+__version__ = "0.2.0"
 
 __all__ = [
     "BackgroundFilter",
